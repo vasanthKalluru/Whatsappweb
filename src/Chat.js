@@ -30,7 +30,11 @@ function Chat() {
                 </div>
             </div>
             <div className="chat_body">
-                <p className="chat_message">Hi there <span className="chat_name">Abhinav </span></p>
+                <p className="chat_message">
+                    <span className="chat_name">Abhinav </span>
+                    Hi there
+                    <span className="chat_timestamp">3:04 pm</span>
+                </p>
                 
             </div>
             <div className="chat_footer">
