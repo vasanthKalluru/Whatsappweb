@@ -5,10 +5,18 @@ import { AttachFile, InsertEmoticon, MoreVert, SearchOutlined } from '@material-
 import MicIcon from '@material-ui/icons/Mic';
 
 function Chat() {
+    const [input,setinput]=useState("");
     const [seed,setseed]=useState("");
     useEffect(() => {
         setseed(Math.floor(Math.random*1000));
     }, [])
+
+    const sendMessage =(e)=>{
+        e.preventDefault();
+        console.log("you have typed:",input);
+        setinput("");
+    }
+
     return (
         <div className="chat">
             <div className="chat_header">
@@ -40,8 +48,8 @@ function Chat() {
             <div className="chat_footer">
                 <InsertEmoticon/>
                 <form>
-                    <input type="text" placeholder="Type a message..." />
-                    <button>send</button>
+                    <input type="text" value={input} onChange={e=> { setinput(e.target.value)} } placeholder="Type a message..." />
+                    <button type="submit" onClick={sendMessage}>send</button>
                 </form>
                 <MicIcon/>
             </div>
