@@ -33,11 +33,10 @@ function Sidebar() {
             </div>
             <div className="sidebar_chat">
                 <SidebarChat />
-                <h1>Sidebar chat</h1>
-                <h1>Sidebar chat</h1>
-                <h1>Sidebar chat</h1>
-                <h1>Sidebar chat</h1>
-                <h1>Sidebar chat</h1>
+                <SidebarChat />
+                <SidebarChat />
+                <SidebarChat />
+                <SidebarChat />
             </div>
         </div>
     )

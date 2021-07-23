@@ -45,3 +45,10 @@
   padding: 10px;
   color: gray;
 }
+
+.sidebar_chat {
+  flex: 1;
+  background-color: white;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
