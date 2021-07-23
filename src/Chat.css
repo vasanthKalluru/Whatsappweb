@@ -59,3 +59,8 @@
   margin-left: 10px;
   font-size: xx-small;
 }
+
+.chat_receiver_message {
+  margin-left: auto;
+  background-color: #dcf8c6;
+}
