@@ -1,8 +1,8 @@
 import React,{useState,useEffect} from 'react'
 import "./Chat.css";
 import { Avatar, IconButton } from '@material-ui/core';
-import { AttachFile, MoreVert, SearchOutlined } from '@material-ui/icons';
-
+import { AttachFile, InsertEmoticon, MoreVert, SearchOutlined } from '@material-ui/icons';
+import MicIcon from '@material-ui/icons/Mic';
 
 function Chat() {
     const [seed,setseed]=useState("");
@@ -30,7 +30,7 @@ function Chat() {
                 </div>
             </div>
             <div className="chat_body">
-                <p className="chat_message chat_receiver_message">
+                <p className={`chat_message ${true && 'chat_receiver_message'}`}>
                     <span className="chat_name">Abhinav </span>
                     Hi there
                     <span className="chat_timestamp">3:04 pm</span>
@@ -38,7 +38,12 @@ function Chat() {
                 
             </div>
             <div className="chat_footer">
-
+                <InsertEmoticon/>
+                <form>
+                    <input type="text" />
+                    <button>send</button>
+                </form>
+                <MicIcon/>
             </div>
         </div>
     )

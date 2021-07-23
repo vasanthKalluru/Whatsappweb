@@ -36,7 +36,7 @@
   background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
   background-repeat: repeat;
   padding: 30px;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 .chat_name {
   position: absolute;
@@ -63,4 +63,18 @@
 .chat_receiver_message {
   margin-left: auto;
   background-color: #dcf8c6;
+}
+
+.chat_footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  border-top: 1px lightgrey solid;
+}
+
+.chat_footer > form {
+  flex: 1;
+  display: flex;
+  background-color: blue;
 }
