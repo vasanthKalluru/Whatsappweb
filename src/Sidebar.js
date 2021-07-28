@@ -13,13 +13,11 @@ function Sidebar() {
     
     
     useEffect(()=>{
-        db.collection('rooms').onSnapshot(snapshot=>(
+        db.collection('rooms').onSnapshot(snapshot=>
             setrooms(snapshot.docs.map(
-                doc=>({
-                    id:doc.id,
-                    data:doc.data(),
-                })
-            ))
+                (doc)=>{return  {id:doc.id,data:doc.data()}
+                }
+            )
         ))
     },[])
 
@@ -50,9 +48,9 @@ function Sidebar() {
             </div>
             <div className="sidebar_chat">
                 <SidebarChat addNewChat />
-                {rooms.map(room=>(
+                {rooms.map(room=>
                     <SidebarChat key={room.id} id={room.id} name={room.data.name} />
-                ))}
+                )}
                 
             </div>
         </div>
