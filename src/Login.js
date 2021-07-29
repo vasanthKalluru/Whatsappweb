@@ -2,9 +2,12 @@ import React from 'react'
 import {Button} from '@material-ui/core'
 import "./Login.css"
 import { auth, provider } from './firebase'
+import {useContext} from "react";
+import { LoginContext } from './LoginContext';
 function Login() {
+    const {setUser} = useContext(LoginContext);
     const signIn=()=>{
-        auth.signInWithPopup(provider).then(result=>console.log(result)).catch(error=>alert(error));
+        auth.signInWithPopup(provider).then(result=>{console.log(result);setUser(result.user)}).catch(error=>alert(error));
     }
     return (
         <div className="login">

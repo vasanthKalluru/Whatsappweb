@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react'
+import React,{useEffect,useState,useContext} from 'react'
 import "./Sidebar.css";
 import { Avatar, IconButton } from '@material-ui/core';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
@@ -7,10 +7,11 @@ import ChatIcon from '@material-ui/icons/Chat';
 import { SearchOutlined } from '@material-ui/icons';
 import SidebarChat from './SidebarChat';
 import db from './firebase';    
+import { LoginContext } from './LoginContext';
 
 function Sidebar() {
     const [rooms,setrooms]=useState([]);
-    
+    const {user} = useContext(LoginContext);
     
     useEffect(()=>{
         db.collection('rooms').onSnapshot(snapshot=>
@@ -26,7 +27,7 @@ function Sidebar() {
         <div className="sidebar">
 
             <div className="sidebar_header">
-                <Avatar/>
+                <Avatar src={user.photoURL}/>
                 <div className="sidebar_header_right">
                     <IconButton>
                         <ChatIcon/>
